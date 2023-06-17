@@ -3,7 +3,11 @@ class Api::V1::CatFactsController < ApplicationController
 
   # POST /api/v1/cat_facts
   def create
-    @cat_fact = CatFact.find_or_create({})
+    fetched_cat_fact = CatFactApi.get
+
+    render json: { message: 'Cannot fetch from api' }, status: :internal_server_error unless fetched_cat_fact
+
+    @cat_fact = CatFact.find_or_create(fetched_cat_fact)
 
     if @cat_fact.save
       render json: @cat_fact, status: :created, location: @cat_fact
