@@ -5,10 +5,10 @@ ruby '2.7.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'devise', '~> 4.9.2'
+gem 'jwt', '~> 2.7.1'
+gem 'bcrypt', '~> 3.1.18'
 gem 'dotenv-rails', '~> 2.7.6'
-gem 'jwt'
-gem 'dry-configurable', '0.9.0'
+# gem 'dry-configurable', '0.9.0'
 gem 'httparty', '~> 0.13.7'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'

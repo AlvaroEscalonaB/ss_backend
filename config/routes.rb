@@ -2,11 +2,9 @@ Rails.application.routes.draw do
   
   namespace :api do
     namespace :v1 do
-      resources :favorite_cat_facts, only: [:create]
-    end
-  end
-  namespace :api do
-    namespace :v1 do
+
+      post '/login', to: "auth#login"
+      
       resources :users, :only => [:show, :create, :delete] do
         collection do
           get :user_favorites
@@ -21,6 +19,8 @@ Rails.application.routes.draw do
           post :set_favorite
         end
       end
+
+      resources :favorite_cat_facts, :only => [:create]
     end
   end
 
