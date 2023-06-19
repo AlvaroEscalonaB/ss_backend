@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  skip_before_action :authenticate_request, only: [:create]
   # GET /api/v1/users/1
   def show
     render json: @user
@@ -9,7 +10,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created, location: @user
+      render json: @user.slice(:id, :name).merge({token: jwt_encode({ id: @user.id })}), status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
     end
