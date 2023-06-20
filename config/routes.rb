@@ -4,8 +4,9 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       post '/login', to: "auth#login"
+      post '/sign-up', to: "users#create"
       
-      resources :users, :only => [:show, :create, :delete] do
+      resources :users, :only => [:show, :delete] do
         collection do
           get :user_favorites
         end
