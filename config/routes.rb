@@ -21,7 +21,7 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :favorite_cat_facts, :only => [:create]
+      resources :favorite_cat_facts, :only => [:create, :destroy]
     end
   end
 

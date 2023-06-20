@@ -22,7 +22,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_favorites
-    render json: current_user.favorite_cat_facts
+    render json: @current_user.cat_facts
   end
 
   private
