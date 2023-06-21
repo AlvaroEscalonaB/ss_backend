@@ -23,5 +23,16 @@ SECRET_KEY_BASE=01b7dfacbc224a8f5bc1001563db557c31bc9303ed9958f06c535a9a284ab18b
 
 4. Create a `config/database.yml` file with the configuration of your postgresql database
 5. Create the database with `rails db:create` then, `rails db:migrate`
+6. Now ready to execute the app `rails s` in the terminal
 
 ## Docker
+
+## Design decisions
+
+1.
+
+## Development quality, highlights in my opinion
+
+1. Serialize certain responses, although wasn't completely exhaustive through all the controllers, complex responses where serialized. This is specially good due that the frontend is in typescript, then the interfaces could be mapped easily
+2. Adapt external libraries: For example is well known that adapt the common third party libraries to the project as plugins or concerns like the jwt gem or the httparty, this is one of the SOLID principles: The Liskov Substitution Principle.
+3. Test of models and requests

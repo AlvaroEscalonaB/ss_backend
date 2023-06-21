@@ -10,7 +10,8 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user.slice(:id, :name).merge({token: jwt_encode({ id: @user.id })}), status: :created
+      # render json: @user.slice(:id, :name).merge({token: jwt_encode({ id: @user.id })}), status: :created
+      render json: @user, serializer: UserSerializer, token: jwt_encode({ id: @user.id }), status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
     end

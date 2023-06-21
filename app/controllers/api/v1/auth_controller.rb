@@ -5,9 +5,9 @@ class Api::V1::AuthController < ApplicationController
     @user = User.find_by_name(params[:name])
     if @user
       token = jwt_encode({ id: @user.id })
-      render json: @user.slice(:id, :name).merge({ token: token }), status: :ok
+      render json: @user, serializer: UserSerializer, token: token, status: :ok
     else
-      render json: { token: nil }, status: :unauthorized
+      render json: { id: nil, user: nil , token: nil }, status: :unauthorized
     end
   end
 

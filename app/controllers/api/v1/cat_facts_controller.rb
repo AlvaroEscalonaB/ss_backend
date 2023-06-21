@@ -9,7 +9,7 @@ class Api::V1::CatFactsController < ApplicationController
 
     if @cat_fact.save
       is_favorite = @cat_fact.is_user_favorite?(@current_user)
-      render json: @cat_fact.as_json.merge({ is_favorite: is_favorite }), status: :created
+      render json: @cat_fact, serializer: CatFactSerializer, is_favorite: is_favorite, status: :created
     else
       render json: @cat_fact.errors, status: :unprocessable_entity
     end
