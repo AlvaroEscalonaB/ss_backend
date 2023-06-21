@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       
       resources :users, :only => [:show, :delete] do
         collection do
-          get :user_favorites
+          get :favorites
         end
       end
 

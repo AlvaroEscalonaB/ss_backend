@@ -21,7 +21,7 @@ class Api::V1::UsersController < ApplicationController
     @user.destroy
   end
 
-  def user_favorites
+  def favorites
     render json: @current_user.cat_facts
   end
 
