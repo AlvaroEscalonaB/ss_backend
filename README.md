@@ -1,24 +1,7 @@
-# README
+# ss_backend repo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Steps to install locally
 
-Things you may want to cover:
+1. Make sure you have the ruby version specified in .ruby-version (2.7.7) if you use a ruby version manager like rvm execute `rvm install 2.7.7` or if you use rbenv use `rbenv install 2.7.7`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Docker
