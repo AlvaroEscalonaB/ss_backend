@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :name
   validates_presence_of :name
 
-  def favorite_cat_facts
+  def cat_facts_favorites
     self.cat_facts
   end
 
