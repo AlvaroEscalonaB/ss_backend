@@ -16,4 +16,8 @@ test:
 production:
   <<: *default
   database: ss_backend_production
+<<<<<<< Updated upstream
   host: <%= ENV.fetch('DB_HOST') { 'localhost' } %>
+=======
+  host: <%= ENV.fetch("DB_HOST") {"Hi gente"} %>
+>>>>>>> Stashed changes

@@ -19,17 +19,16 @@ RUN bundle install --jobs 4 --retry 3
 # Copy the rest of the application code into the container
 COPY . .
 
+RUN rm -f /app/tmp/pids/*.pid
+
 # Precompile assets
 # RUN bundle exec rails assets:precompile
 
-# Expose the application port
-EXPOSE 3000
-
 # Set environment variables
 ENV RAILS_ENV=production
+# ENV DB_HOST=0.0.0.0
 
-# Run database migrations
-RUN bundle exec rails db:migrate
+# RUN bundle exec rails db:migrate
 CMD bundle exec rails s -b 0.0.0.0
 
 # Start the Rails server
