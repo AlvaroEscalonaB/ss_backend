@@ -19,15 +19,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1.80.0
         with:
-          ruby-version: "2.7"
+          ruby-version: "2.6.6"
       - name: Build and run test
         env:
           DATABASE_URL: postgres://postgres:@localhost:5432/test
           RAILS_ENV: test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+          SECRET_KEY_BASE: c9dfa59a9f571caf00528fd5dad57dd72ccabe176dbb492ff95c6915d838e2208a7723de94f24dea6410c75cbf509c1a28d5cdaf43a3f2de543e4efd1a3a0464
         run: |
           sudo apt-get -yqq install libpq-dev
           gem install bundler:1.17.3
