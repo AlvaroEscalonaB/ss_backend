@@ -17,4 +17,4 @@ production:
   <<: *default
   # url: <%= ENV.fetch('DATABASE_URL') { 'database' } %>
   database: ss_backend_production
-  host: <%= ENV.fetch('DB_HOST') { 'localhost' } %>
+  url: <%= ENV.fetch('DATABASE_URL') { 'database' }
