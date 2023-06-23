@@ -15,6 +15,7 @@ services:
       --health-retries 5
 jobs:
   ss_testing:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Setup Ruby
