@@ -29,10 +29,10 @@ SECRET_KEY_BASE=01b7dfacbc224a8f5bc1001563db557c31bc9303ed9958f06c535a9a284ab18b
 
 To run in developent mode in the docker compose is necessary to have the next folder structure with the same names for `ss_frontend` and `ss_backend` then
 
-- `ss-app`
-  - `css_frontend`
-  - `css_backend`
-- `docker-compose.yml` (Same level of ss-app)
+- `ss-app` (Name doesn't matter here)
+  - `ss_frontend`
+  - `ss_backend`
+- `docker-compose.yml` (Same level of `ss-app`)
 
 The contents of the `docker-compose.yml` are the following:
 
@@ -92,16 +92,18 @@ Once this is effectively done,
 
 ## Development quality, highlights in my opinion
 
-1. Serialize certain responses, although wasn't completely exhaustive through all the controllers, complex responses where serialized. This is specially good due that the frontend is in typescript, then the interfaces could be mapped easily
-2. Adapt external libraries: For example is well known that adapt the common third party libraries to the project as plugins or concerns like the jwt gem or the httparty, this is one of the SOLID principles: The Liskov Substitution Principle.
-3. Usage of jwt to have a extra layer of security
-4. Test of models and requests
+1. The project (together with the frontend) were planified with a trello board with the chrome | firefox extension of card numbers, this way it was possible to organize in smaller tasks and track what things would be possible with the deadline and priorize the structural things. Also the branches were divided and has the prefix of the card number. **Note** you can ask me for permissions of the trello if you want, nonetheless at the end of the README an image was attached of the distribution of the trello board.
+2. Serialize certain responses, although wasn't completely exhaustive through all the controllers, complex responses where serialized. This is specially good due that the frontend is in typescript, then the interfaces could be mapped easily
+3. Adapt external libraries: For example is well known that adapt the common third party libraries to the project as plugins or concerns like the jwt gem or the httparty, this is one of the SOLID principles: The Liskov Substitution Principle.
+4. Usage of jwt to have a extra layer of security
+5. Test of models and requests
 
 ## To improve
 
 1. Use the jwt-devise gem with a strategy to have and only one toker active for a particular user, also to have a better testing experience, althogh the jwt gem gives you more control.
 2. Exhaustive testing and see the coverage report of all the application
 3. Use a factory for testing to repeat less code
+4. Try to shorten the commits
 
 ## UML
 
