@@ -62,6 +62,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include Rails.application.routes.url_helpers
+  # config.include ControllerHelpers, :type => :controller
 end
 
 Shoulda::Matchers.configure do |config|
@@ -69,4 +71,11 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
+
+
+def generate_token(user)
+  payload = { id: user.id }
+  token = JWT.encode(payload, 'your_secret_key', 'HS256')
+  "Bearer #{JWT.encode({ id: user.id }, ENV['SECRET_KEY_BASE'])}"
 end

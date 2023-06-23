@@ -94,7 +94,14 @@ Once this is effectively done,
 
 1. Serialize certain responses, although wasn't completely exhaustive through all the controllers, complex responses where serialized. This is specially good due that the frontend is in typescript, then the interfaces could be mapped easily
 2. Adapt external libraries: For example is well known that adapt the common third party libraries to the project as plugins or concerns like the jwt gem or the httparty, this is one of the SOLID principles: The Liskov Substitution Principle.
-3. Test of models and requests
+3. Usage of jwt to have a extra layer of security
+4. Test of models and requests
+
+## To improve
+
+1. Use the jwt-devise gem with a strategy to have and only one toker active for a particular user, also to have a better testing experience, althogh the jwt gem gives you more control.
+2. Exhaustive testing and see the coverage report of all the application
+3. Use a factory for testing to repeat less code
 
 ## UML
 
